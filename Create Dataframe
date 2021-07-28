@@ -1,0 +1,10 @@
+##How to create dataframe:
+##Using Dictionary
+Data= {'Name': ['Tom', 'Joseph', 'Krish', 'John','ram'], 'Age': [20, 21, 19, 18,25]}    
+DF=pd.DataFrame(Data)   
+##using LIST:
+Data = [['tom', 10], ['nick', 15], ['juli', 14]]
+DF = pd.DataFrame(data, columns = ['Name', 'Age'])
+##With index
+Data= {'Name': ['Tom', 'Joseph', 'Krish', 'John','ram'], 'Age': [20, 21, 19, 18,25]}    
+DF=pd.DataFrame(Data,index =['rank1','rank2','rank3','rank4'])##Index will be rank1,rank2,rank3... column are same
