@@ -1,0 +1,4 @@
+##Remove duplicates
+D=A.drop_duplicates()##Remove all duplicates if the entire row is repeated
+D_1=A.drop_duplicates(subset='IMDB Score')##remove duplicates in IMDB Score column and takes first one by default
+D_2=A.drop_duplicates(subset=['IMDB Score','Title'],keep='first')#check two columns keep = first means it takes first
