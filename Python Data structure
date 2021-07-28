@@ -1,0 +1,33 @@
+Four built-in data types in Python used to store collections of data, are List,Tuple, Set, and Dictionary, 
+
+LIST:
+1.List items are ordered, changeable, and allow duplicate values.
+2.List items are indexed, the first item has index [0], the second item has index [1] etc.
+syntax for LIST:
+thislist = ["apple", "banana", "cherry"]
+print(thislist)
+
+
+Tuple:
+1.Tuple items are ordered, unchangeable, and allow duplicate values.
+2.Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
+Syntax for Tuple:
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+
+Sets:
+1.Set items are unordered, unchangeable,unindexed and do not allow duplicate values.
+Syntax for Sets:
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+
+
+Dictionary:
+Dictionary items are ordered, changeable, and does not allow duplicates.
+Syntax for Dictionary:
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
