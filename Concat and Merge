@@ -1,0 +1,30 @@
+### Concat two data frame####
+C1=First_20
+C2=Last_20
+
+Con_1=pd.concat([C1,C2])### Default concat,one table goes under another table since they have similar field names
+Con_2=pd.concat([C1,C2],axis=0)### row wise concate same as default one.
+Con_3=pd.concat([C1,C2],axis=0,ignore_index=True)##Index number starts arranging itself from 0 to n in order
+Con_4=pd.concat([C1,C2],axis=1)### Concat column wise create same field name and fills it.
+Con_5=pd.concat([C1,C2],axis=0,keys=['C1','C2'])##It creates a row index name C1,C2 and fills it in row
+Con_6=pd.concat([C1,C2],axis=1,keys=['C1','C2'])##It creates a column index name C1,C2 and fills it in column
+Con_7=Con_5.loc['C2']## Index are name with C1 and C2 so if we want to take only C2 rows.
+
+
+###Merge.
+
+M1=First_20[['Title','Genre']]
+M2=First_20[['Title','IMDB Score']]
+
+Mer_1=pd.merge(M1,M2,on='Title')##Normal merge(intersect), it merges both table because title is common(Common elements)
+Mer_2=pd.merge(M1,M2,on='Title',how='outer')## Takes all the elements from both table.
+Mer_3=pd.merge(M1,M2,on='Title',how='left')##Takes only common and left table element.
+Mer_4=pd.merge(M1,M2,on='Title',how='right')##Takes only common and right table element
+
+Mer_Ind=pd.merge(M1,M2,on='Title',how='left',indicator=True)## Indicator true tells us whether the elements in both,left,right
+
+Merge suffixes:
+Mer_suf_1=First_20
+Mer_suf_2=Last_20
+Mer_suf=pd.merge(Mer_suf_1,Mer_suf_2,on='Title',how='outer',suffixes=("_left","_right"))
+#If two table has same column it take the same column as x and y column so we are replacing the names as left and right
