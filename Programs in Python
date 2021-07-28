@@ -1,0 +1,159 @@
+#########################################Basic Programs in Python ###################################################
+
+#count of odd numbers and count of even numbers 
+A=[2,5,3,7,9,12,56]
+Even=[]
+Odd=[]
+l=len(A)
+for i in range(0,l):
+    if A[i]%2==0:
+        Even.append(A[i])
+    else:
+        Odd.append(A[i])
+print('Number of even numbers:', len(Even))
+print('Number of even numbers:', len(Odd))
+
+#Minimum and Maximum numbers in the list
+A=[4,8,99,108,89,566,554,89,65,689,9895]
+Min=min(A)
+Max=max(A)
+print('Minimum number in list:',Min)
+print('Maximum number in list:',Max)
+
+#Min and Max without function:
+A=[4,8,99,108,89,566,554,89,65,3,689,9895]
+Min=[]
+l=len(A)
+Min1=A[0]
+for i in range(0,l):
+    if A[i]<Min1:
+        Min1=A[i]
+        Min=Min1
+print('minimum number in the list is:',Min)
+
+#Max number in the list
+B=[2,5,6,9,8,55,8,88,555,1,225,8,8,9]
+l=len(B)
+Max=B[0]
+for i in range(0,l):
+    if B[i]>Max:
+        Max=B[i]
+print('Max is:',Max)
+ 
+#Repeated number in the list
+A=[1,22,33,6,8,9,7,5,5,6,6,4,88,5,55,99,5]
+R=[]
+l=len(A)
+U=[]
+for i in range(0,l):
+    if A[i] not in U:
+        U.append(A[i])
+    else:
+        R.append(A[i])
+print('repeated numbers :',R)
+print('Unique numbers :',U)
+
+##Unique number in list using set(data structure)
+A=[1,2,3,3,4,5,3,6,7,6,88,99]
+Unique=set(A)
+Unique_1=list(Unique)
+
+#Ascending order
+A=[1,8,9,66,8,4,6,7,1]
+Asc=[]
+l=len(A)
+for i in range(0,l):
+    Asc.append(min(A))
+    A.remove(min(A))
+print(Asc)
+
+#Descending
+A=[1,8,9,66,8,4,6,7,1]
+Asc=[]
+l=len(A)
+for i in range(0,l):
+    Asc.append(max(A))
+    A.remove(max(A))
+print(Asc)
+
+#Reverse the string
+Str=input('Enter the string:')
+l=len(Str)
+New_str=''
+for i in range(l):
+   New_str=New_str+Str[-1]
+   Str=Str[:-1]
+   
+#Armstrong number
+A=895
+Temp=A
+C=0
+while Temp>0:
+    B=Temp%10
+    C=B*B*B+C
+    Temp=Temp//10
+if A==C:
+    print('The number is armstrong number')
+else:
+    print('The number is not a armstrong number')
+    
+#Fibonacci number
+No=int(input('Number of terms'))
+N1=0
+N2=1
+count=0
+if No<0:
+    print('Please enter the posittive integer')
+else:
+    print('Fibonacci seqence:')
+while count<No:
+    print(N1)
+    Nth=N1+N2
+    N1=N2
+    N2=Nth
+    count+=1
+
+#Check the prime number
+A=3
+for i in range(2,A):
+    if A%i==0:
+       print('A is the prime number')
+       break
+else:
+   print('A is not a prime number')
+
+#Factorial of the number
+
+A=int(input('Enter the Factorial terms'))
+B=1
+for i in range(1,A+1):
+    C=B*i
+    B=C
+print(B)
+
+#Largest of three numbers
+
+A=int(input())
+B=int(input())
+C=int(input())
+if A>B and A>C:
+    print('A is the greatest number')
+if B>A and B>C:
+    print('B is the greatest number')
+else:
+    print('C is the greatest number')
+    
+#Leap year
+A=int(input('enter the year'))
+if (A%4)==0:
+    print(A,'is leap year')
+else:
+    print(A,'is not leap year')
+
+#Positive or negative number
+
+A=int(input())
+if A>=0:
+    print(A,'is positive integer')
+else:
+    print(A,'is negative integer')
