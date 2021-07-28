@@ -1,0 +1,15 @@
+##Shape in Python(row and column count)
+S=A.shape##Tells you rows and column
+S_0=A.shape[0]# Tells you no of rows
+S_1=A.shape[1]#tells you no of column
+
+
+
+##to check the column names
+col_names=A.columns##display column names
+col_uniq=A.columns.unique()##display unique column names
+
+
+
+#Rename column name:
+R=A.rename(columns={'Title':'Padamperu','IMDB Score':'Mark'})#Rename column in the table
