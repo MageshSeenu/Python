@@ -1,0 +1,40 @@
+import pandas as pd
+
+A=pd.read_csv('G:/Interview Preparation/Python/Dataset_Pandas/NetflixOriginals.csv')
+print(A)
+
+## First 10 and Last 10 rows
+First_20=A.head(20)
+Last_20=A.tail(20)
+    
+###LOC and ILOC:
+
+##LOC(Label)
+
+loc_data=A
+A1=loc_data.loc[4,'Title'] ## Takes 4th row in the column Tite##3
+A2=loc_data.loc[4]### Takes fourth row fully
+A3=loc_data.loc[0:4]###Takes 0 to 4th row the entire row
+A4=loc_data.loc[0:4,['Title','Genre']]##Takes 0 to 4th row and takes only Title and Genre columns
+A5=loc_data.loc[0:4,'Title':'IMDB Score']##Takes 0 to 4 row and Takes data from Title to IMDB Score
+A6=loc_data.loc[0:4,'Title']###Takes 0 to 4th row the entire row
+
+
+##ILOC(INDEX)[if it is : then it leaves last element]
+iloc_data=A
+B1=iloc_data.iloc[4,0] ## Takes 4th row in the first column(0)
+B2=iloc_data.iloc[4]### Takes fourth row fully
+B3=iloc_data.iloc[0:4]###Takes 0 to 3rd row only the entire row
+B4=iloc_data.iloc[0:4,[0,1]]##Takes 0 to 3rd row and takes only Title and Genre columns
+B5=iloc_data.iloc[0:4,0:5]##Takes 0 to 3rd and Takes data from 0 to 4th column
+B6=iloc_data.iloc[0:4,1]###Takes 0 to 3rd row and second column(1) only the entire row
+
+##LIST SLICE
+A_list=[1,2,3,4,5,6,7,8,9]
+# Starts from first element 0 to n #
+# Starts from last elements -1 to 0 #
+First_index=A_list[0]### Takes first element
+last_index=A_list[-1]###Takes last element
+L1=A_list[0:3]##Takes first three element[1,2,3]
+L2=A_list[:-3]## Takes all elements except last three element[1,2,3,4,5,6]
+L3=A_list[2:-3]# Takes from index 2 and remove last three elements.
