@@ -1,0 +1,23 @@
+###Add column to dataframe
+cars = {'Brand': ['Honda Civic','Toyota Corolla','Ford Focus','Audi A4'],
+        'Price': [22000,25000,27000,35000]}
+
+DC= pd.DataFrame(cars, columns = ['Brand','Price'])
+print(DC)
+Discount=[2000,4000,5000,3000]## which column to be added
+DC['Discount']=Discount## Adding discount column in DC.
+## Another way of adding column
+Extra_Column=A['IMDB Score']
+DC['IMDB Score']=Extra_Column###VERY IMPORTANT NOTE. INDEX SHOULD BE SAME IN BOTH TABLE THEN ONLY YOU CAN TAKE AND ADD
+
+
+###Remove column from dataframe..
+# REMOVE COLUMN=RC
+RC=A.drop('IMDB Score',axis=1)##REMOVE ONE COLUMN ,AXIS=1 is column.
+RC=A.drop('IMDB Score',axis=1,inplace=True)##REMOVE ONE COLUMN ,AXIS=1 is column.
+#IMPLACE=TRUE MEANS IT CHANGES PERMANENTLY IN A Variable,Inplace false will change in assigned variable
+RC_2=A.drop(['IMDB Score','Title'],axis=1)##Remove two column,axis=1 is column.
+
+# REMOVE ROW=RW(iloc and loc slice the table and give the value, drop remove that value from the table)
+RW=A.drop(0,axis=0)#it removes 0 row only ,axis=0 is row
+RW_1=A.drop([0,5],axis=0)##It removes 0 and 5 th row only
