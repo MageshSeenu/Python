@@ -1,0 +1,22 @@
+###connect SQL with pandas Example:
+import mysql.connector as sql
+db_connection1 = sql.connect(host='mysqltest.vigital.local', database='user_vikatan', user='root', password='83X41Pqd3sfy')
+db1 = pd.read_sql("SELECT * FROM `user` WHERE `End_Date` >= '2019-09-10 00:00:00' AND `Status` = 1 ORDER BY `user_subscription_updated`.`End_Date` DESC",db_connection1)
+
+##Connect Mangodb with pandas Examples
+from pymongo import MongoClient
+import pymongo
+uri = "mongodb://admin:e828z4GP6A9D@10.10.2.66:30128/appappo?authSource=admin"
+client = MongoClient(uri)
+db = client.appappo
+
+A= db.transaction
+data_transaction = pd.DataFrame(list(A.find({}, 
+    { 
+        "_id" : "$_id", 
+        "amount" : "$amount",
+        "gateway":"$gateway",
+        "transaction_date":"$transaction_date",
+        "user_id":"$user_id"
+    })))
+
