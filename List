@@ -1,0 +1,235 @@
+Why Lists Are Useful
+You can:
+Access any item by its position (index)
+Add or remove items
+Loop through them
+Store any number of values in one variable
+
+a=[2,5,7,8,4]
+l=len(a)
+b=0
+
+for i in range(l):
+    print (a[i])
+    b+=a[i]
+print(b)
+    
+##🔜 Task 2: Find the Maximum Number in a List
+
+a=[34,56,23,105,12,89]
+l=len(a)
+check=a[0]
+for i in range(l):
+    if a[i]>check:
+        check=a[i]
+print(check)
+    
+##🔜 Task 3: Find the Minimum Number in a List
+
+a=[34,56,23,105,12,89]
+l=len(a)
+check=a[0]
+for i in range(l):
+    if a[i]<check:
+        check=a[i]
+print(check)
+
+
+##same using functions
+
+def find_max(a):
+    l=len(a)
+    check=a[0]
+    for i in range(l):
+        if a[i]>check:
+            check=a[i]
+    return check
+
+    
+
+##29th June
+
+#Next Up: List Methods
+Python lists come with many built‑in methods that let you modify and inspect them easily. Let’s cover the essentials:
+
+Method	What it does	Example
+append(x)	Adds x to the end of the list	lst.append(10)
+insert(i, x)	Inserts x at index i	lst.insert(1, 20)
+extend(iterable)	Appends all elements from another iterable	lst.extend([7,8])
+remove(x)	Removes the first occurrence of x	lst.remove(5)
+pop([i])	Removes and returns element at index i (last if omitted)	lst.pop(), lst.pop(2)
+index(x)	Returns the index of the first occurrence of x	lst.index(8)
+count(x)	Counts how many times x appears	lst.count(3)
+sort()	Sorts the list in place	lst.sort()
+sorted(lst)	Returns a new sorted list	new = sorted(lst)
+reverse()	Reverses the list in place	lst.reverse()
+
+✅ Task 2: Practice List Methods
+Instructions:
+
+Create a list of your favorite fruits (at least 5).
+
+Use these list methods:
+
+.append() – add a new fruit
+
+.remove() – remove one fruit
+
+.insert() – insert a fruit at the second position
+
+.pop() – remove the last fruit
+
+Print the list after each operation so you can see the change.
+    
+a=['Grapes','Banana','Kiwi','Mango','Jackfruit']
+a.append('Apple')
+a.remove('Banana')  
+a.insert(1,'Pomo')##Insert Pomo at first position  
+a.pop() ##Delete last item 
+
+
+
+🧠 Task 3: Filter Even Numbers from a List
+Instructions:
+Create a list of numbers (example: [10, 23, 45, 6, 28, 55, 70]).
+Use a loop to filter even numbers from the list.
+Store the even numbers in a new list.
+Print the new list.
+
+    A=[10, 23, 45, 6, 28, 55, 70]
+    Even=[]
+    l=len(A)
+    for i in range(0,l):
+        if A[i]%2==0:
+            Even.append(A[i])
+    print(Even)
+    
+🔹 Task 4: Reverse a List
+Instructions:
+Create a list of 5 or more numbers or strings.
+Reverse the list using slicing.
+Print the reversed list.
+
+my_list = [1, 2, 3, 4, 5]
+reverse=my_list[::-1] ## using slice
+my_list.reverse() ## we can't do b=a.reverse()
+
+
+✅ Task 3: Count Occurrences of an Element
+
+a = [1, 2, 3, 2, 4, 2, 5]
+UI=int(input())
+l=len(a)
+UIO=[]
+for i in range(0,l):
+    if UI==a[i]:
+        UIO.append(a[i])
+output=len(UIO)
+print("The number", UI, "appears", output, "times in the list.")
+        
+
+✅ Task 5: Find Common Elements Between Two Lists
+list1 = [1, 2, 3, 4]  
+list2 = [3, 4, 5, 6]
+output=[]
+
+if list1 in list2:
+    output.append(list1)
+    
+l1=len(list1)
+l2=len(list2)
+outputnew=[]
+for i in range(0,l1):
+    for j in range(0,l2):
+        if list1[i]==list2[j]:
+            outputnew.append(list2[i])
+to remove duplicates put it in sets
+output=list(set(outputnew))
+        
+Task 3: List Comprehension and 
+##Even/odd
+
+a=[1,2,56,54,89,69,645,11,21,33,26,64,44]
+Even=[]
+odd=[]
+l=len(a)
+for i in range(0,l):
+    if a[i]%2==0:
+        Even.append(a[i])
+    else:
+        odd.append(a[i])
+print(Even)
+print(odd)
+       
+List comphrehension
+even_numbers = [x for x in a if x % 2 == 0]
+x--> this is the x you are putting it in output list
+x in a --> check conditions of if statement
+
+Given a = [1,2,3,4,5,6,7,8,9,10]
+Even=[x for x in a if x%2==0]
+Odd=[x for x in a if x%2!=0]
+
+Practice Exercises: Lists & Functions
+
+fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry']
+
+Insert 'Fig' at index 2
+Remove the last fruit using pop() and print it
+Sort the list in reverse alphabetical order
+Reverse the list
+Print the final list after each step
+    
+fruits[2]='Fig'
+print(fruits)
+
+fruits.pop()
+print(fruits)
+
+fruits.sort()
+
+fruits.reverse()
+print fruits
+
+#list comphrehension exercise
+numbers = [10, 15, 21, 30, 42, 55, 60, 75]
+Create a new list of only even numbers
+
+Create another list of numbers divisible by both 3 and 5
+
+Create a list of squares of all numbers greater than 20
+
+
+Even=[x for x in a if x%2==0]
+Div=[x for x in a if x%3==0 and x%5==0]
+square=[x*x for x in a if x>20]
+
+Exercise 3: Functions with Lists
+
+a = [10, 15, 21, 30, 42, 55, 60, 75]
+
+def even(a):
+    Even = []
+    for i in range(len(a)):
+        if a[i] % 2 == 0:
+            Even.append(a[i])
+    return 
+
+def even(a):
+    return [x for x in a if x % 2 == 0]
+
+
+def unique_sorted(a):
+    US = list(set(a))  # Remove duplicates
+    US.sort()           # Sort in-place
+    return US
+
+def processlist(a):
+    US=list(set(a))
+    Odd=[]
+    l=len(US)
+    for i in range(0,l):
+        if US[i]%2!=0:
+            Odd.append(US[i])
+    Odd.sort()
+    return Odd
