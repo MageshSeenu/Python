@@ -1,0 +1,25 @@
+def even(a):
+    Even = []
+    for i in range(len(a)):
+        if a[i] % 2 == 0:
+            Even.append(a[i])
+    return 
+
+def even(a):
+    return [x for x in a if x % 2 == 0]
+
+
+def unique_sorted(a):
+    US = list(set(a))  # Remove duplicates
+    US.sort()           # Sort in-place
+    return US
+
+def processlist(a):
+    US=list(set(a))
+    Odd=[]
+    l=len(US)
+    for i in range(0,l):
+        if US[i]%2!=0:
+            Odd.append(US[i])
+    Odd.sort()
+    return Odd
