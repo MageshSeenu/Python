@@ -1,0 +1,190 @@
+# PythonInt
+    Float
+    String
+    
+    user input
+    string input
+    
+    looping
+    for loop :
+    while loop:
+        
+    if
+    elif
+    else:
+        
+    ##Numbers user input numbers, consecutive(output)
+    
+    userin=int(input())
+    for i in range(userin):
+        print(i)
+    
+    ##Even number or odd number
+    a=int(input())
+    
+    if a%2==0:
+        print("The number is even")
+    else:
+        print("The number is odd")
+    
+    ###factorial using for loop
+    
+    a=int(input())
+    factorial=1
+    
+    for i in range(1,a+1):
+        factorial*=i
+    
+    ###factorial using while loop    
+    a=int(input())
+    factorial=1
+    i=1
+    
+    while i<=a:
+        factorial*=i
+        i=i+1
+        
+    ##sum of numbers(user input=5) then it takes from 1 to 5
+    
+    a=int(input())
+    result=0
+    i=1
+    while i <=a:
+        result+=i
+        i=i+1
+    
+    #Multiplication Number
+    
+    a=int(input())
+     
+    for i  in range(1,10):
+        result=a*i
+        print(result)
+    
+    #🧠 Task 4: Count the Number of Digits in a Number
+    a=input()
+    result=len(a)
+    
+    #using while loop count number of digits
+    a=input()
+    result=len(a)
+    (That works perfectly for counting digits in the input as a string)
+    
+    
+    ###print triangle based on user input
+    
+    a=int(input())
+    
+    for i in range(1,a+1):
+        if i==1:
+            print('*')
+        elif i==2:
+            print('**')
+        elif i==3:
+            print('***')
+        elif i==4:
+            print('****')
+        elif i==5:
+            print('*****')
+    
+    a=int(input())
+    
+    ##using different method
+    for i in range(1,a+1):
+        result='*'*i
+        print(result)
+        
+    ##reverse tht number
+    a=int(input())
+    reverse=a[::-1](This can be used for string slice not integer)
+    
+    ##Check if a Number is Prime
+    
+    a = int(input())
+    
+    for i in range(2, a):
+        if a % i == 0:
+            print("It is not a prime number")
+            break
+    else:
+        print("It is a prime number")
+      
+    ##sum of numbers(user 12345) then 1+2+.
+    a=int(input())
+    total=0
+    while a>0:
+        b=a%10
+        total+=b
+        a=a//10
+        
+    ##mulitply of each number
+    
+    a=int(input())
+    m=1
+    while a>0:
+        b=a%10
+        m*=b
+        a=a//10
+        
+    #Bonus Challenge: FizzBuzz
+    n=int(input())
+    for i in range(1,n+1):
+        if i%3==0 and i%5==0:
+            print("FizzBuzz")
+        elif i%3==0:
+            print("Fizz")
+        elif i%5==0:
+            print("Buzz")
+        else:
+            print(i)
+        
+    #square root using functions
+    
+    def squares(a):
+        result=a*a
+        return result
+    output=squares(8)
+    print(output)
+    
+    ##sum using functions
+    def addsum(a, b):
+        result = a + b
+        return result
+    
+    output = addsum(6, 7)
+    print(output)
+    
+    ##function to check even or odd
+    
+    def evenoddcheck(n):
+        if n%2==0:
+            return "Even"
+        else:
+            return "odd"
+    
+    Result=evenoddcheck(13)
+    print(Result)
+    
+    #factorial using functions
+    
+    def factorial(n):
+        fact=1
+        for i in range(1,n+1):
+            fact*=i
+        return fact
+        
+    output=factorial(5)
+    print(output)
+    
+    ##Write a function to check if a string is a palindrome
+    
+    def palin(a):
+        rever=a[::-1]
+        if a==rever:
+            return "palindrome"
+        else:
+            return "Notpalindrome"
+        
+    output=palin("madam")
+    print(output)
+        
