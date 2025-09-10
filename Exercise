@@ -1,0 +1,343 @@
+def palindrome(a):
+    return"palindrome" if a==a[::-1] else "nonpalindrome"
+    
+print(palindrome('madam'))
+
+
+x=int(input())
+x=[1, 2, 3, 4, 5, 6]  
+
+l=len(x)
+Even=[]
+for i in range(0,l):
+    if x[i]%2==0:
+        Even.append(x[i])
+        
+Even=[x for x in x if x%2==0]
+
+tuple to dict(no duplicate
+              )
+
+data = [('apple', 2), ('banana', 3), ('apple', 4)]
+
+o={}
+
+for a,b in data:
+    if a in o:
+        o[a]+=b
+    else:
+        o[a]=b
+    
+    
+Input:  "hello world"
+
+I="hello world"
+A=I.split()
+
+l=len(A)
+
+for i in range(0,l):
+    A[i]=A[i][::-1]
+
+#### Nested list: 
+data = [1, [2, [3, 4]], [5, 6], 7]
+o=[]
+
+for a in data:
+    if type(a)==list:
+        for b in a:
+            if type(b)==list:
+                for c in b:
+                    o.append(c)
+            else:
+                o.append(b)
+    else:
+        o.append(a)
+        
+using recursion:
+a = [1, [2, [3, 4]], [5, 6], 7]
+def normal(a):
+    o=[]
+    for x in a:
+        if type(x)==list:
+           o=o+normal(x)
+        else:
+            o.append(x)
+    return o
+    
+                    
+words = ["apple", "banana", "avocado", "cherry", "apricot", "blueberry"]
+output=[]
+
+l=len(words)
+for i in range(0,l):
+    if words[i][0]=='a':
+        output.append(words[i].upper())
+
+                            
+        
+data = [("apple", 2), ("banana", 3), ("apple", 4), ("banana", 2), ("mango", 5)]
+           
+x={}
+for a,b in data:
+    if  a in x:
+        x[a]=b+x[a]
+    else:
+        x[a]=b
+        
+nums = [10, 20, 30, 40, 50, 60]
+l=len(nums)
+Tsum=0
+o=[]
+for a in nums:
+    Tsum=Tsum+a
+avg=Tsum/l
+for i in range(0,l):
+    o.append(nums[i]-avg)
+    
+
+text = "welcome"
+vowels=['a','e','i','o','u']
+output=[]
+
+for a in text:
+    if a in vowels:
+        output.append(a)
+result=len(output)
+
+nums = [2, 4, 3, 5, 7, -1, 1]
+l=len(nums)
+target = 6
+output=[]
+
+for a in nums:
+    for i in range(0,l):
+        if a+nums[i]==6 and a!=nums[i]:
+            output.append(tuple(sorted((a,nums[i]))))
+result=list(set(output))
+            
+##detect outliers using IQR
+
+
+find lower limit and upper limit
+lowerlimit=Q1-1.5*IQR
+upperlimt=Q3-1.5*IQR
+
+data = [2, 4, 5, 7, 8, 10, 12, 15, 100]
+Now:
+
+Q1 = 5 (25th percentile)
+Q3 = 15 (75th percentile)
+
+IQR = Q3 - Q1 = 15 - 5 = 10
+
+Now apply the formula:
+
+Lower limit = 5 − 1.5 × 10 = -10
+Upper limit = 15 + 1.5 × 10 = 30
+
+✅ So, any number < -10 or > 30 is an outlier.
+In this case, 100 > 30, so it's an outlier.    
+
+##find the longest consecutive num
+A = [5, 2, 1, 3, 2, 4, 5, 6]
+max_len = 0
+longest_subarray = []
+
+for i in range(len(A)):
+    check = []
+    for j in range(i, len(A)):
+        if A[j] in check:
+            break
+        check.append(A[j])
+    if len(check) > max_len:
+        max_len = len(check)
+        longest_subarray = check
+
+print("✅ Longest Length:", max_len)
+print("🔢 Longest Subarray:", longest_subarray)
+        
+    
+A = [5, 2, 1, 3, 2, 4, 5, 6]
+l=len(A)
+max_l=0
+lon_a=[]
+for i in range(l):
+    check=[]
+    for j in range(i,l):
+        if A[j] in check:
+            break
+        else:
+            check.append(A[j])
+    if len(check)>max_l:
+        max_l=len(check)
+        lon_a=check
+
+sliding window
+    
+A = [1, 2, 3, 4, 5, 6]
+l=len(A)
+max_value=0
+
+for i in range(0,l-2):
+    Curr=A[i]+A[i+1]+A[i+2]
+    if Curr>max_value:
+        max_num=[]
+        max_value=Curr
+        max_num.append((A[i],A[i+1],A[i+2]))
+        
+A = [1, 2, 3, 4, 5] 
+B = [0, 1, 3, 7]
+
+def lists(A,B):
+    C=[]
+    l=len(A)
+    for i in range(0,l):
+        if A[i] in B:
+            C.append(A[i])
+    return C
+
+        
+import timeit
+
+# list comprehension
+print(timeit.timeit("[x*x for x in range(1000)]", number=10000))
+
+# generator
+print(timeit.timeit("(x*x for x in range(1000))", number=10000))
+
+        
+Expression	Purpose	Returns
+df['salary']	Select a column	Series
+df[['salary','name']]	Select multiple columns	DataFrame
+df[df['salary'] > 100000]	Filter rows where salary > 100000	DataFrame
+
+
+    
+
+
+
+
+
+
+for col in df.select_dtypes(include=Number):
+    df[col].fillna[df[col].median(),inplace=True]
+
+Use lambda to create a new column: "High" if salary>80k else "Low"
+
+df=df.apply(lambda x: x)
+
+
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+plt.plot(x, y, marker="o")
+plt.title("Simple Line Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+
+
+
+import pandas as pd
+
+df = pd.DataFrame({
+    "day": ["Mon", "Tue", "Wed", "Thu"],
+    "sales": [120, 150, 100, 180]
+})
+
+df.plot(x="day", y="sales", kind="bar")  # quick bar chart
+
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.show()
+
+
+A = [[1,2], [3,4], [[4], [6]]]
+o = []
+
+for i in A:
+    if type(i) is list:
+        for j in i:
+            if type(j) is list:
+                for k in j:
+                    o.append(k)
+            else:
+                o.append(j)
+    else:
+        o.append(i)
+
+print(o)   # [1, 2, 3, 4, 4, 6]
+
+            
+def flatlist(A):
+    result=[]
+    for i in A:
+        if type(i) is list:
+            result.extend(flatlist(i))
+        else:
+            result.append(i)
+    return result
+
+
+
+s = "Magesh"
+count={}
+
+for a in s:
+    if a in count:
+        count[a]=1+count[a]
+    else:
+        count[a]=1
+
+
+
+
+Prime=[]
+for i in range(2,101):
+    for j in range(2,101):
+        if i!=j and i>j:
+            if i%j==0:
+                break
+    else:
+        Prime.append(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
